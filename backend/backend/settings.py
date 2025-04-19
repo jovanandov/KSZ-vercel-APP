@@ -21,12 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^j8y7r(sb@an)aglk3*nxp*8#b=_d0uma(ek*w@-kxvv04fj1c'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-^j8y7r(sb@an)aglk3*nxp*8#b=_d0uma(ek*w@-kxvv04fj1c')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '192.168.1.186']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0',
+    '192.168.1.186',
+    'jovanvuleta.pythonanywhere.com'
+]
 
 
 # Application definition
@@ -119,8 +125,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -143,6 +153,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://192.168.1.186:5173",
+    "https://jovanvuleta.github.io",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -173,13 +184,16 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://192.168.1.186:5173",
+    "https://jovanvuleta.github.io",
 ]
-CSRF_COOKIE_SECURE = False  # Za razvojno okolje
-CSRF_COOKIE_HTTPONLY = False  # Za razvojno okolje
+
+# Security settings
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SAMESITE = 'Lax'
 
 # Session settings
-SESSION_COOKIE_SECURE = False  # Za razvojno okolje
+SESSION_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_DOMAIN = None  # Dovoli kolačke za vse domene
