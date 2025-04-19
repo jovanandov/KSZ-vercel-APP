@@ -134,7 +134,7 @@ const Checklist: React.FC = () => {
           odgovoriResults.forEach((odgovori, index) => {
             const stevilka = existingSerijskeStevilke[index];
             odgovori.forEach(odgovor => {
-              const odgovorKey = `${odgovor.vprasanje}-${stevilka.stevilka}`;
+              const odgovorKey = `${odgovor.vprasanje_id}-${stevilka.stevilka}`;
               allAnswers[odgovorKey] = odgovor.odgovor;
             });
           });
@@ -198,9 +198,10 @@ const Checklist: React.FC = () => {
       
       // Shrani na strežnik
       await saveOdgovor({
-        vprasanje: vprasanje.id,
+        vprasanje_id: vprasanje.id,
         odgovor,
-        serijska_stevilka: serijskaStevilka.id
+        projekt_id: parseInt(projektId),
+        serijska_stevilka: serijskaStevilka.stevilka
       });
       
       toast.success('Odgovor uspešno shranjen');
@@ -218,9 +219,10 @@ const Checklist: React.FC = () => {
         setAnswers(prev => ({ ...prev, [odgovorKey]: value }));
         
         return {
-          vprasanje: vprasanjeId,
+          vprasanje_id: vprasanjeId,
           odgovor: value,
-          serijska_stevilka: stevilka.id
+          projekt_id: parseInt(projektId),
+          serijska_stevilka: stevilka.stevilka
         };
       });
       
@@ -248,9 +250,10 @@ const Checklist: React.FC = () => {
           // Če obstaja odgovor, ga shrani
           if (odgovor !== undefined) {
             promises.push(saveOdgovor({
-              vprasanje: vprasanje.id,
+              vprasanje_id: vprasanje.id,
               odgovor: odgovor,
-              serijska_stevilka: stevilka.id
+              projekt_id: parseInt(projektId),
+              serijska_stevilka: stevilka.stevilka
             }));
           }
         }
