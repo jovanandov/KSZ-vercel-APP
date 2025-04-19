@@ -5,20 +5,26 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    sourcemap: false,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+      },
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          mui: ['@mui/material', '@mui/icons-material'],
+        },
       },
     },
   },
   server: {
     port: 5173,
     strictPort: true,
-    open: true,
     host: true,
   },
   resolve: {
@@ -28,6 +34,5 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', '@mui/material', '@mui/icons-material'],
-    exclude: ['electron'],
   },
 }) 

@@ -2,8 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import DownloadIcon from '@mui/icons-material/Download';
 import UploadIcon from '@mui/icons-material/Upload';
 import DeleteIcon from '@mui/icons-material/Delete';
-
-const API_URL = 'http://192.168.1.186:8000/api';
+import { API_URL } from '../config';
 
 // Funkcija za pridobivanje CSRF tokena
 const getCsrfToken = (): string | null => {
