@@ -16,7 +16,6 @@ import { getTipi } from '../api/api';
 interface Tip {
   id: number;
   naziv: string;
-  opis: string;
 }
 
 const ChecklistStart: React.FC = () => {

@@ -19,7 +19,7 @@ interface ChecklistContextType {
   deleteChecklist: (id: number) => Promise<void>;
 }
 
-const ChecklistContext = createContext<ChecklistContextType | undefined>(undefined);
+export const ChecklistContext = createContext<ChecklistContextType | undefined>(undefined);
 
 export const ChecklistProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [checklists, setChecklists] = useState<Checklist[]>([]);
