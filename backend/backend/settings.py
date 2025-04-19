@@ -31,7 +31,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '0.0.0.0',
     '192.168.1.186',
-    'jovanvuleta.pythonanywhere.com'
+    'jovanvuleta.pythonanywhere.com',
+    'jovanandov.pythonanywhere.com'
 ]
 
 
@@ -154,6 +155,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "http://192.168.1.186:5173",
     "https://jovanvuleta.github.io",
+    "https://jovanandov.pythonanywhere.com"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -185,6 +187,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:5173",
     "http://192.168.1.186:5173",
     "https://jovanvuleta.github.io",
+    "https://jovanandov.pythonanywhere.com"
 ]
 
 # Security settings
