@@ -13,7 +13,7 @@ import {
   DialogContent,
   DialogActions,
 } from '@mui/material';
-import { useChecklist } from '../contexts/ChecklistContext';
+import { useChecklist } from '../context/ChecklistContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import FileUploadIcon from '@mui/icons-material/FileUpload';

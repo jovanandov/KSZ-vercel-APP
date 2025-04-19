@@ -11,7 +11,7 @@ import {
   Tab,
   Alert
 } from '@mui/material';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../context/AuthContext';
 import { login } from '../api/api';
 
 interface TabPanelProps {

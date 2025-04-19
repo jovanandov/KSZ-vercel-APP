@@ -24,7 +24,12 @@
     "noImplicitAny": false,
     "strictNullChecks": false,
     "allowJs": true,
-    "checkJs": false
+    "checkJs": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitThis": false,
+    "noPropertyAccessFromIndexSignature": false
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"],

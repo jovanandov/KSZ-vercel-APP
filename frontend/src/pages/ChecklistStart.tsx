@@ -10,7 +10,7 @@ import {
   MenuItem,
   Alert,
 } from '@mui/material';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../context/AuthContext';
 import { getTipi } from '../api/api';
 
 interface Tip {

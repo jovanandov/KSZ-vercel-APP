@@ -191,6 +191,8 @@ export interface Segment {
   id: number;
   naziv: string;
   tip: number;
+  ime?: string;
+  vprasanja?: Vprasanje[];
 }
 
 // Serijske številke
@@ -231,10 +233,13 @@ export const createSerijskaStevilka = async (projektId: string, tipId: number, i
 
 // Posodobljen vmesnik za odgovor
 export interface Odgovor {
-  vprasanje: number;
+  id?: number;
+  vprasanje_id: number;
   odgovor: string;
-  opomba?: string;
-  serijska_stevilka: SerijskaStevilka['id'];
+  projekt_id: number;
+  serijska_stevilka: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 // Segmenti in vprašanja
