@@ -96,11 +96,8 @@ const Home: React.FC = () => {
     }
 
     try {
-      const response = await login({
-        username: registerData.osebnaStevilka,
-        password: registerData.password
-      });
-      if (response.status === 200) {
+      const response = await login(registerData.osebnaStevilka, registerData.password);
+      if (response) {
         setActiveTab(0);
         setLoginData({
           username: registerData.osebnaStevilka,

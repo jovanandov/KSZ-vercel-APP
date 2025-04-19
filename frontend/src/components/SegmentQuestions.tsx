@@ -34,7 +34,6 @@ interface Odgovor {
   id?: number;
   vprasanje_id: number;
   odgovor: string;
-  opomba?: string;
 }
 
 interface SegmentQuestionsProps {
@@ -81,7 +80,6 @@ const SegmentQuestions: React.FC<SegmentQuestionsProps> = ({
           await saveOdgovor({
             vprasanje_id: vprasanje.id,
             odgovor: odgovor.odgovor,
-            opomba: odgovor.opomba,
             projekt_id: projektId,
             serijska_stevilka: serijskaStevilka,
           });

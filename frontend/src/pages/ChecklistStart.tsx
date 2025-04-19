@@ -32,7 +32,7 @@ const ChecklistStart: React.FC = () => {
     const fetchTipi = async () => {
       try {
         const response = await getTipi();
-        setTipi(response.data);
+        setTipi(response);
       } catch (error) {
         setError('Napaka pri nalaganju tipov');
       }
@@ -60,7 +60,7 @@ const ChecklistStart: React.FC = () => {
         </Typography>
         
         <Typography variant="subtitle1" gutterBottom>
-          Osebna številka: {user?.username}
+          Osebna številka: {user?.osebna_stevilka}
         </Typography>
 
         {error && (

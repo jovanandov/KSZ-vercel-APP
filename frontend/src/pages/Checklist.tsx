@@ -214,7 +214,7 @@ const Checklist: React.FC = () => {
   const handleMasovniOdgovor = async (vprasanjeId: number, value: string) => {
     try {
       // Posodobi lokalno stanje
-      const odgovori = serijskeStevilke.map(stevilka => {
+      const odgovori: Odgovor[] = serijskeStevilke.map(stevilka => {
         const odgovorKey = `${vprasanjeId}-${stevilka.stevilka}`;
         setAnswers(prev => ({ ...prev, [odgovorKey]: value }));
         

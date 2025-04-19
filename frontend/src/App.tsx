@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import StartChecklist from './pages/StartChecklist';
 import { useAuth } from './context/AuthContext';
+import { ChecklistProvider } from './context/ChecklistContext';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -24,22 +25,24 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Layout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<StartChecklist />} />
-          <Route path="checklist/:tipId/:projektId/:ponovitevId" element={<Checklist />} />
-          <Route path="settings" element={<Settings />} />
-        </Route>
-      </Routes>
+      <ChecklistProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Layout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<StartChecklist />} />
+            <Route path="checklist/:tipId/:projektId/:ponovitevId" element={<Checklist />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+        </Routes>
+      </ChecklistProvider>
     </ThemeProvider>
   );
 };

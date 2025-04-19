@@ -15,7 +15,7 @@ const QuestionsPage: React.FC = () => {
     const fetchSegment = async () => {
       try {
         if (!segmentId) return;
-        const data = await getSegmenti();
+        const data = await getSegmenti(1, "1");
         const foundSegment = data.find((s: Segment) => s.id === parseInt(segmentId));
         if (foundSegment) {
           setSegment(foundSegment);
