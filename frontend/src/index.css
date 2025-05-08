@@ -1,13 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Kontrolni Seznam aplikacija" />
+  <title>Kontrolni Seznam</title>
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} 
+  <!-- Poti do virov, ker imaš 'base' nastavljeno -->
+  <base href="/kontrolni-seznam-vite/" />
+  
+  <link rel="icon" href="/vite.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/main-DlmRBCkf.css" />
+  <script type="module" crossorigin src="/assets/main-D8uzH2ZF.js"></script>
+</head>
+<body>
+  <noscript>Za delovanje aplikacije potrebujete JavaScript.</noscript>
+  <div id="root"></div>
+</body>
+</html>
