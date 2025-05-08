@@ -6,14 +6,14 @@
       "use": "@vercel/node"
     },
     {
-      "src": "src/index.html",
+      "src": "src/index.css",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/kontrolni-seznam-vite/(.*)",
-      "dest": "/kontrolni-seznam-vite/index.html"
+      "dest": "/kontrolni-seznam-vite/index.css"
     }
   ]
 }
