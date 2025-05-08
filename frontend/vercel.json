@@ -1,18 +1,10 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "src": "frontend/dist/**/*",
+      "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/pages/login.tsx"
-    }
-  ]
-} 
+  "cleanUrls": true,
+  "trailingSlash": false
+}
