@@ -5,7 +5,7 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/kontrolni-seznam-vite/',  // zagotovimo, da so vse poti relativne na to osnovno pot
+  base: '/',  // zagotovimo, da so vse poti relativne na to osnovno pot
   build: {
     outDir: 'dist',  // izhodna mapa
     emptyOutDir: true,  // praznimo mapo pred gradnjo
