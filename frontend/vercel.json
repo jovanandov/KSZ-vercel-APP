@@ -1,10 +1,19 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "frontend/dist/**/*",
+      "src": "vite.config.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  "routes": [
+    {
+      "src": "/kontrolni-seznam-vite/(.*)",
+      "dest": "/kontrolni-seznam-vite/index.html"
+    }
+  ]
 }
