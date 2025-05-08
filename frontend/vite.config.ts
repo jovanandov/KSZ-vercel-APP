@@ -22,11 +22,16 @@ export default defineConfig({
       },
     },
   },
+  //server: {
+   // port: 5173,  // lokalni strežnik na tem portu
+   // strictPort: true,  // ne bo poskusil uporabiti drugega porta
+   // host: true,  // omogočimo dostop iz vseh IP-jev, če razvijaš na več napravah
+ // },
   server: {
-    port: 5173,  // lokalni strežnik na tem portu
-    strictPort: true,  // ne bo poskusil uporabiti drugega porta
-    host: true,  // omogočimo dostop iz vseh IP-jev, če razvijaš na več napravah
-  },
+  open: true,
+  origin: 'https://kontrolni-seznam-vite-dxuyvjerw-jovans-projects-3d451a99.vercel.app',
+},
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),  // nastavitev aliasa za potke
